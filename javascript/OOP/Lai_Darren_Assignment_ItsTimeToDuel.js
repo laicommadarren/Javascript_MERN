@@ -30,11 +30,9 @@ class Effect extends Card {
 
     play( target ) {
         if( target instanceof Unit ) {
-            console.log(target[this.stat]);
-            target.this.stat
             target[this.stat] += this.magnitude;
             
-            if (this.magnitude > 0) {console.log(" +" + this.magnitude + " to " + target.name + "'s " + this.stat + ".")
+            if (this.magnitude > 0) {console.log("+" + this.magnitude + " to " + target.name + "'s " + this.stat + ".")
             }
             else {
                 console.log(this.magnitude + " to " + target.name + "'s " + this.stat + ".")
