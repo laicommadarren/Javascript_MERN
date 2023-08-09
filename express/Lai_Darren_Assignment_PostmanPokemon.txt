@@ -1,0 +1,9 @@
+https://pokeapi.co/api/v2/pokemon/blissey
+
+https://pokeapi.co/api/v2/pokemon/meganium
+
+https://pokeapi.co/api/v2/pokemon/777
+
+https://pokeapi.co/api/v2/pokemon/456
+
+https://pokeapi.co/api/v2/pokemon/151
