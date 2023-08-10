@@ -4,15 +4,19 @@ const JokeSchema = new mongoose.Schema({
     // _id : {
     //     type: String
     // },
-    setup : {
+    setup: {
         type: String,
-        min: [10, "Joke setup must be at least 10 characters"]
+        required: [true, "Joke setup required"],
+        minlength: [10, "Joke setup must be at least 10 characters"]
     },
-    punchline : {
+    punchline: {
         type: String,
-        min: [3, "Joke punchline must be at least 3 characters"]
-    },
-}, {timestamps:true});
+        required: [true, "Joke punchline Required"],
+        minlength: [3, "Joke punchline must be at least 3 characters"]
+    }
+},
+{ timestamps: true }
+);
 
 const Joke = mongoose.model('Joke', JokeSchema);
 
