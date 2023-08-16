@@ -2,15 +2,22 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-export default (props => {
+export default (() => {
     const [name, setName] = useState("");
+    const [nickname, setNickname] = useState("");
     const [prefPosition, setPrefPosition] = useState("")
+
+    const navigate = useNavigate();
+    
+    // for front end validations
     const [isError, setIsError] = useState(false);
     const nameValidationMsg = "Name must be at least 3 characters"
-    const [nickname, setNickname] = useState("");
+    
+    // for back end validations
     const [nameErrors, setNameErrors] = useState([]);
     const [nicknameErrors, setNicknameErrors] = useState([]);
-    const navigate = useNavigate();
+    
+    // create new player data in database
     const createPlayer = player => {
         axios.post('http://localhost:8000/api/players', player)
         .then(res => {
@@ -31,8 +38,6 @@ export default (props => {
     const onSubmitHandler = e => {
         e.preventDefault();
         createPlayer({ name, nickname, prefPosition })
-        setName("");
-        setNickname("");
     }
     const handleChange = e => {
         setName(e.target.value);

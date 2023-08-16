@@ -5,7 +5,6 @@ import './styles.css'; // is import part necessary? doesn't seem to do anything
 
 
 const Status = () => {
-    const {id} = useParams();
     const [players, setPlayers] = useState([]);
 
     useEffect(() => {
