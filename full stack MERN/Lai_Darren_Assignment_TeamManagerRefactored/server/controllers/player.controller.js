@@ -5,10 +5,9 @@ module.exports.index = (request, response) => {
     });
 }
 module.exports.createPlayer = (request, response) => {
-    const { name, nickname, prefPosition } = request.body;
+    const { name, prefPosition } = request.body;
     Player.create({
         name,
-        nickname,
         prefPosition
     })
         .then(player => response.json(player))
